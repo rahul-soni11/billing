@@ -55,6 +55,10 @@ class SaleController extends Controller
             $data['sales'] = Sale::select('id', 'branch', 'date', 'bill_no', 'qty', 'texable','s_amount','c_amount','i_amount', 'total')->where('category', $category)->whereBetween('date', [ $data['from'], $data['to'] ])->get();
             $data['count'] = count($data['sales']);
             
+            
+            $data['qty_sum_sn'] = Sale::where([['category', $category],['branch','sn']])->whereBetween('date', [$data['from'], $data['to']])->sum('qty');
+            $data['qty_sum_nn'] = Sale::where([['category', $category],['branch','nn']])->whereBetween('date', [$data['from'], $data['to']])->sum('qty');
+
             $data['texable_sum_sn'] = Sale::where([['category', $category],['branch','sn']])->whereBetween('date', [$data['from'], $data['to']])->sum('texable');
             $data['texable_sum_nn'] = Sale::where([['category', $category],['branch','nn']])->whereBetween('date', [$data['from'], $data['to']])->sum('texable');
             

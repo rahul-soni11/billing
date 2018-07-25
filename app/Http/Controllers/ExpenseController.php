@@ -29,6 +29,7 @@ class ExpenseController extends Controller
             ->get();
             $data['count'] = count($data['expenses']);   
             
+           $data['sum_qty'] = Expense::whereBetween('date', [$data['from'], $data['to']])->sum('qty');
            $data['sum_texable'] = Expense::whereBetween('date', [$data['from'], $data['to']])->sum('texable');
            $data['sum_s_amount'] = Expense::whereBetween('date', [$data['from'], $data['to']])->sum('s_amount');
            $data['sum_c_amount'] = Expense::whereBetween('date', [$data['from'], $data['to']])->sum('c_amount');

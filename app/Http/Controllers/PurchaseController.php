@@ -62,6 +62,7 @@ class PurchaseController extends Controller
                                 ->get();
             $data['count'] = count($data['purchases']);
 
+            $data['sum_qty'] = DB::table('purchases')->where('category', $category)->whereBetween('date', [ $data['from'], $data['to'] ])->sum('qty');            
             $data['sum_texable'] = DB::table('purchases')->where('category', $category)->whereBetween('date', [ $data['from'], $data['to'] ])->sum('texable');            
             $data['sum_s_amount'] =  DB::table('purchases')->where('category', $category)->whereBetween('date', [ $data['from'], $data['to'] ])->sum('s_amount');
             $data['sum_c_amount'] =  DB::table('purchases')->where('category', $category)->whereBetween('date', [ $data['from'], $data['to'] ])->sum('c_amount');

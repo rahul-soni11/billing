@@ -91,15 +91,17 @@
             <table class="table table-responsive-md table-bordered">
             <thead>
                 <tr>
-                <th>Texable <i class="fa fa-inr" aria-hidden="true"></i></th>
-                <th>SGST <i class="fa fa-inr" aria-hidden="true"></i></th>
-                <th>CGST <i class="fa fa-inr" aria-hidden="true"></i></th>
-                <th>IGST <i class="fa fa-inr" aria-hidden="true"></i></th>
-                <th>Total <i class="fa fa-inr" aria-hidden="true"></i></th>
+                    <th>Qty</th>
+                    <th>Texable <i class="fa fa-inr" aria-hidden="true"></i></th>
+                    <th>SGST <i class="fa fa-inr" aria-hidden="true"></i></th>
+                    <th>CGST <i class="fa fa-inr" aria-hidden="true"></i></th>
+                    <th>IGST <i class="fa fa-inr" aria-hidden="true"></i></th>
+                    <th>Total <i class="fa fa-inr" aria-hidden="true"></i></th>
                 </tr>
             </thead>
             <tbody>
                 <tr class="green">
+                    <td>{{$sum_qty}}</td>
                     <td>{{$sum_texable}}</td>
                     <td>{{$sum_s_amount}}</td>
                     <td>{{$sum_c_amount}}</td>

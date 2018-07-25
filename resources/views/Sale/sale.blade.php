@@ -108,6 +108,7 @@
   <thead>
     <tr>
       <th>Branch</th>
+      <th>Qty.</th>
       <th>Texable <i class="fa fa-inr" aria-hidden="true"></i></th>
       <th>SGST <i class="fa fa-inr" aria-hidden="true"></i></th>
       <th>CGST <i class="fa fa-inr" aria-hidden="true"></i></th>
@@ -118,6 +119,7 @@
   <tbody>
       <tr class="green">
         <td>Smriti Nagar</td>
+        <td>{{$qty_sum_sn}}</td>
         <td>{{$texable_sum_sn}}</td>
         <td>{{$sgst_sum_sn}}</td>
         <td>{{$cgst_sum_sn}}</td>
@@ -126,6 +128,7 @@
       </tr>
       <tr class="yellow">
         <td>Nehru Nagar</td>
+        <td>{{$qty_sum_nn}}</td>
         <td>{{$texable_sum_nn}}</td>
         <td>{{$sgst_sum_nn}}</td>
         <td>{{$cgst_sum_nn}}</td>
@@ -134,11 +137,13 @@
       </tr>
       <tr>
         <td>Grand Total</td>
+        <td>{{$qty_sum_sn + $qty_sum_nn}}</td>
         <td>{{$texable_sum_sn + $texable_sum_nn}}</td>
         <td>{{$sgst_sum_sn + $sgst_sum_nn}}</td>
         <td>{{$cgst_sum_sn + $cgst_sum_nn}}</td>
         <td>{{$igst_sum_sn + $igst_sum_nn}}</td>
         <td>{{$total_sum_sn + $total_sum_nn}}</td>
+
       </tr>
   </tbody>
 </table>
